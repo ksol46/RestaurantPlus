@@ -8,13 +8,17 @@
 <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+<header>
 <%@ include file="Header.jsp" %>
+</header>
 <div class="bt_wrap">
-<a href="#" class="on" onclick="">게시판으로 보기</a>
+<a href="list" class="on" onclick="">게시판으로 보기</a>
 </div>
-<main class="map_main">
+<main>
 <%@ include file="Map.jsp" %>
 </main>
+<footer>
 <%@ include file="Footer.jsp" %>
+</footer>
 </body>
 </html>

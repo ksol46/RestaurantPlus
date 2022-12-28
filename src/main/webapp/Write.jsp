@@ -16,18 +16,12 @@
 <div class="write_wrap">
 <form name="frm" method="post" action="insert">
 <div class="write_main">
-<div class="title">
-<dl>
-	<dt>이미지 업로드</dt>
-	<dd><input class="real-upload" type="file" accept="image/*" required multiole style="display:none;"></dd>
-</dl>
-</div>
 </div>
 </form>
 </div>
+</main>
 <footer>
 <%@ include file="Footer.jsp" %>
 </footer>
-</main>
 </body>
 </html>

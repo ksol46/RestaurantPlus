@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header>맛집 더하기<a scr=""></a></header>
-	
+	<header>
+	<div>
+	맛집 더하기<a href="write"><img class="plusicon" src="/RestrauntPlus/Image/plusicon.png"></a>
+	</div>
+	</header>
 </body>
 </html>

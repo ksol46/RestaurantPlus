@@ -5,8 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="Style.css">
 </head>
 <body>
-
+<header>
+<%@ include file="Header.jsp" %>
+</header>
+<main>
+</main>
+<footer>
+<%@ include file="Footer.jsp" %>
+</footer>
 </body>
 </html>
