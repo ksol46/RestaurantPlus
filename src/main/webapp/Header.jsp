@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +8,13 @@
 </head>
 <body>
 	<header>
-	<div>
-	맛집 더하기<a href="write"><img class="plusicon" src="/RestrauntPlus/Image/plusicon.png"></a>
-	</div>
+	<div><a class="logo" href="home"><img alt="로고" src="/RestrauntPlus/Image/logo.png"></a></div>	
 	</header>
+	<nav>
+		<ul>
+			<li><a href="write">글쓰기</a></li>
+			<li><a href="list">게시판</a></li>
+		</ul>
+	</nav>
 </body>
 </html>

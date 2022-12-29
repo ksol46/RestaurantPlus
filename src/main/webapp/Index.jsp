@@ -11,9 +11,6 @@
 <header>
 <%@ include file="Header.jsp" %>
 </header>
-<div class="bt_wrap">
-<a href="list" class="on" onclick="">게시판으로 보기</a>
-</div>
 <main>
 <%@ include file="Map.jsp" %>
 </main>

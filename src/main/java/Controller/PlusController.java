@@ -41,6 +41,9 @@ public class PlusController extends HttpServlet {
 		String site = null;
 		
 		switch (command) {
+		case "/home":
+			site = "Index.jsp";
+			break;
 		case "/write":
 			site = "Write.jsp";
 			break;

@@ -7,8 +7,8 @@
 
 header {
 	top: 0;
-	height: 150px;
-	line-height: 150px;
+	height: 140px;
+	line-height: 140px;
 	width: 100%;
 	background: #FAEEAB;
 	text-align: center;
@@ -17,49 +17,74 @@ header {
 	color: #050500;
 }
 
-.plusicon {
-	width: 40px;
-	height: 40px;
+.logo{
+	text-align: center;
 }
 
-.bt_wrap {
-  margin: 20px;
-  text-align: center;
-  font-size: 0;
+nav ul {
+	height: 60px;
+	line-height: 60px;
+	width: 100%;
+	background: #FBF9B0;
+	overflow: hidden;
 }
 
-.bt_wrap a {
-  display: inline-block;
-  min-width: 50px;
-  margin-left: 5px;
-  padding: 5px;
-  border: 1px solid #000;
-  border-radius: 2px;
-  font-size: 1.4rem;
-  text-align: center;
+nav ul li {
+	float: center;
+	list-style: none;
+	padding: 0 15px;
 }
-
-.bt_wrap a:hover {
-	text-decoration: underline;
-}
-
-.bt_wrap a.on {
-  background: #C8865A;
-  color: #fff;
-}
-
-
 
 main {
+	overflow: auto;
 	width: 100%;
+	height: 100%;
 }
 
-.map_wrap{
-	text-align:center;
+.title{
+	font-size: 28px;
+	font-weight: 900;
+	text-align: center;
+	margin: 3rem;
 }
 
+.mapwrap {
+	margin: 0 auto;
+	width: 1200px;
+	height: 400px;
+}
+
+.write_main{
+	padding: 10px;
+	text-align: center;
+	height: 900px;
+}
+
+table {
+	width: 700px;
+	height: 800px;
+}
+
+table, tr, th, td {
+	border: 1px solid black;
+}
+
+td {
+	padding-left: 3px;
+	text-align: left;
+}
+
+.list_wrap{
+	
+}
+
+.w_btn {
+	padding: 3px;
+	text-align: center;
+}
 
 footer {
+	padding-top: 10px;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
