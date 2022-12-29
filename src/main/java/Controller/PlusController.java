@@ -16,30 +16,33 @@ public class PlusController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PlusDAO dao;
 	private ServletContext ctx;
-	
+
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		
+
 		dao = new PlusDAO();
 		ctx = getServletContext();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		doPro(request, response);
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		doPro(request, response);
 	}
 
-	protected void doPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		doPro(request, response);
+	}
+
+	protected void doPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String context = request.getContextPath(); // 톰캣의 Context path를 가져온다(server.xml에서 확인)
 		String command = request.getServletPath();
 		String site = null;
-		
+
 		switch (command) {
 		case "/home":
 			site = "Index.jsp";
@@ -53,10 +56,10 @@ public class PlusController extends HttpServlet {
 		case "/list":
 			site = "";
 			break;
-		
+
 		}
-		
-	ctx.getRequestDispatcher("/" + site).forward(request, response);
+
+		ctx.getRequestDispatcher("/" + site).forward(request, response);
 	}
-	
+
 }

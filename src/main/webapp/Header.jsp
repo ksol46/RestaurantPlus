@@ -7,14 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header>
-	<div><a class="logo" href="home"><img alt="로고" src="/RestrauntPlus/Image/logo.png"></a></div>	
-	</header>
+	<div class="logowrap">
+		<a class="logo" href="home"><img alt="로고"
+			src="/RestrauntPlus/Image/logo.png"></a>
+	</div>
 	<nav>
-		<ul>
-			<li><a href="write">글쓰기</a></li>
-			<li><a href="list">게시판</a></li>
-		</ul>
+		<a class="add">글쓰기</a>
+		<a class="add">게시판</a>
 	</nav>
 </body>
 </html>
