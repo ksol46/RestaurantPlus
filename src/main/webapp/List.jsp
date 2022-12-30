@@ -9,10 +9,8 @@
 <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-	<header>
-		<%@ include file="Header.jsp"%>
-	</header>
-	<main>
+	<%@ include file="Header.jsp"%>
+	<section>
 		<div class="title">더하기 목록</div>
 		<div class="list_wrap">
 			<table>
@@ -25,7 +23,7 @@
 					</tr>
 				</thead>
 				<tbody>
-				<%-- <c:forEach>
+					<%-- <c:forEach>
 				<tr>
 				<td>1</td>
 				<td>장원김밥</td>
@@ -36,9 +34,7 @@
 				</tbody>
 			</table>
 		</div>
-	</main>
-	<footer>
-		<%@ include file="Footer.jsp"%>
-	</footer>
+	</section>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>

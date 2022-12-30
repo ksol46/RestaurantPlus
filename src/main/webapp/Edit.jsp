@@ -43,11 +43,11 @@
 					</tr>
 					<tr>
 						<th>평점</th>
-						<td>1<input type="radio" name="c_star" value="1"> 2<input
-							type="radio" name="c_star" value="2"> 3<input
-							type="radio" name="c_star" value="3"> 4<input
-							type="radio" name="c_star" value="4"> 5<input
-							type="radio" name="c_star" value="5">
+						<td>1<input type="radio" name="c_grade" value="1"> 2<input
+							type="radio" name="c_grade" value="2"> 3<input
+							type="radio" name="c_grade" value="3"> 4<input
+							type="radio" name="c_grade" value="4"> 5<input
+							type="radio" name="c_grade" value="5">
 						</td>
 					</tr>
 					<tr>

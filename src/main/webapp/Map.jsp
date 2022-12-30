@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="mapwrap">
-<div id="map" style="width:1500px;height:700px;"></div>
+<div class="map_wrap">
+<div id="map" style="width:1500px;height:700px;text-align:center;"></div>
 </div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07363c0dc0bf7d6b8e3a7ced482a5de9"></script>
 <script>
@@ -37,7 +37,7 @@ var marker = new kakao.maps.Marker({
 marker.setMap(map);
 
 // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
-var iwContent = '<div style="padding:5px;"><a src=""></a>게시글 링크</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div style="padding:5px;"><a href="http://localhost:8082/RestrauntPlus/home">게시글링크</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
     iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
 // 인포윈도우를 생성합니다

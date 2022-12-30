@@ -8,14 +8,10 @@
 <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-<header>
-<%@ include file="Header.jsp" %>
-</header>
+<%@ include file="Header.jsp"%>
 <main>
 <%@ include file="Map.jsp" %>
 </main>
-<footer>
 <%@ include file="Footer.jsp" %>
-</footer>
 </body>
 </html>

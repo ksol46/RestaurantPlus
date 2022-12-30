@@ -13,20 +13,18 @@ request.setCharacterEncoding("utf-8");
 <script type="text/javascript" src="Script.js"></script>
 </head>
 <body>
-	<header>
-		<%@ include file="Header.jsp"%>
-	</header>
-	<main>
+	<%@ include file="Header.jsp"%>
+	<section>
 		<div class="title">맛집 더하기</div>
+		<div class="write_main">
 		<form name="frm" action="add">
-			<div class="write_main">
 				<table>
 					<tr>
 						<th>작성날짜</th>
 						<td><input type="date" name="c_date"></td>
 					</tr>
 					<tr>
-						<th>상점명</th>
+						<th>글제목(상점명으로 불러올 것)</th>
 						<td><input type="text" name="r_name"></td>
 					</tr>
 					<tr>
@@ -42,17 +40,17 @@ request.setCharacterEncoding("utf-8");
 						<td><input type="text" name="r_latitude"></td>
 					</tr>
 					<tr>
-						<th>코멘트</th>
-						<td><input type="text" name="c_coment"></td>
+						<th>평점</th>
+						<td>1<input type="radio" name="c_grade" value="1"> 2<input
+							type="radio" name="c_grade" value="2"> 3<input
+							type="radio" name="c_grade" value="3"> 4<input
+							type="radio" name="c_grade" value="4"> 5<input
+							type="radio" name="c_grade" value="5">
+						</td>
 					</tr>
 					<tr>
-						<th>평점</th>
-						<td>1<input type="radio" name="c_star" value="1"> 2<input
-							type="radio" name="c_star" value="2"> 3<input
-							type="radio" name="c_star" value="3"> 4<input
-							type="radio" name="c_star" value="4"> 5<input
-							type="radio" name="c_star" value="5">
-						</td>
+						<th>코멘트</th>
+						<td><input type="text" name="c_coment"></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="w_btn">
@@ -63,9 +61,7 @@ request.setCharacterEncoding("utf-8");
 				</table>
 			</div>
 		</form>
-	</main>
-	<footer>
-		<%@ include file="Footer.jsp"%>
-	</footer>
+	</section>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>

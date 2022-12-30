@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<footer>KOREA Copyrightⓒ2015 All rights reserved. Human Resources Development Service of Korea.</footer>
+<footer>
+KOREA Copyrightⓒ2015 All rights reserved. Human Resources Development Service of Korea.
+</footer>
 </body>
 </html>
