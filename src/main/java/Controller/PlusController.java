@@ -41,13 +41,25 @@ public class PlusController extends HttpServlet {
 			throws ServletException, IOException {
 		String context = request.getContextPath(); // 톰캣의 Context path를 가져온다(server.xml에서 확인)
 		String command = request.getServletPath();
+
 		String site = null;
 
+		PlusDAO pdao = new PlusDAO();
+		
 		switch (command) {
+		case "/":
 		case "/home":
 			site = "Index.jsp";
 			break;
+		case "/maplist":
+			request.setAttribute("mapList",pdao.getMapList(request, response));
+			site = "home.jsp";
+		case "/detail":
+			site = "Detail.jsp";
+			break;
 		case "/write":
+			String ma = request.getParameter("Ma");
+			String la = request.getParameter("La");
 			site = "Write.jsp";
 			break;
 		case "/writing":

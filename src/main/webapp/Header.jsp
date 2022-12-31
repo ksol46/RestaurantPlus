@@ -15,8 +15,7 @@
 	</header>
 	<nav>
 		<div class="add_wrap">
-			<a class="add">글쓰기</a>
-			<a class="add">게시판</a>
+			<a class="add" href="write">글쓰기</a>
 		</div>
 	</nav>
 </body>

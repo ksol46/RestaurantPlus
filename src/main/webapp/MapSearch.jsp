@@ -34,6 +34,7 @@
 
 			//마커 하나를 지도위에 표시합니다 
 			addMarker(new kakao.maps.LatLng(37.5021576, 127.0243763));
+			//addMarker(new kakao.maps.LatLng(${PlusDTO.r_latitude},${PlusDTO.r_longitude}));
 
 			//마커를 생성하고 지도위에 표시하는 함수입니다
 			function addMarker(position) {
@@ -47,8 +48,7 @@
 
 				// 마커가 지도 위에 표시되도록 설정합니다
 				marker.setMap(map);
-				
-				var iwContent = '<div style="padding:1px;">'+'위도는: '+position.Ma.toFixed(4)+'<br>'+'경도는: '+position.La.toFixed(4)+'</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+				var iwContent = '<div style="padding:1px;"><a href="detail?Ma='+position.Ma+'&La='+position.La+'">상세보기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 			    iwPosition = new kakao.maps.LatLng(37.5021576, 127.0243763), //인포윈도우 표시 위치입니다
 			    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 			    
