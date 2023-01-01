@@ -21,17 +21,37 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
+var mapList[]; //mapList를 못 불러오는것 같다.
 
-for(var i=0; i<(mapList.size); i++){
+for(var i=0; i<mapList.size; i++){
 	//i=상점의 순서, 
 	var store = (mapList[i]);
+	
+	 // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35); 
+    
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    
+    
 	// 마커를 표시할 위치입니다 
 	var position = new kakao.maps.LatLng(store.r_latitude,store.r_longitude);
+	
+	 // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커를 표시할 위치
+        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지 
+    });
+	 
 	// 마커를 생성합니다
+	/*
 	var marker = new kakao.maps.Marker({
 	  position: position,
 	  clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
 	});
+	*/
 	
 	// 아래 코드는 위의 마커를 생성하는 코드에서 clickable: true 와 같이
 	// 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다

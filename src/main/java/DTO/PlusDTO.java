@@ -88,7 +88,23 @@ public class PlusDTO {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return 
+				 u_id+
+				 u_name+
+				 c_id+
+				r_id+
+				c_no+
+				 c_date+
+				 c_grade+
+				c_text+
+				 r_name+
+				 r_address+
+				 r_latitude+
+				 r_longitude
+				;
+	}
 	
 
 }

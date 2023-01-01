@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.collections.keyvalue.AbstractMapEntryDecorator;
-
 import DTO.PlusDTO;
 
 public class PlusDAO {
@@ -24,14 +22,13 @@ public class PlusDAO {
 	public static Connection getConnection() throws Exception {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection
-				("jdbc:oracle:thin:@//localhost:1521/xe","system","sys1234");
+				("jdbc:oracle:thin:@//localhost:1521/xe","test","tests1234");
 		return con;
 	}
 
 	// 홈 화면 지도에 대한 데이터 리스트 (마커) 불러오기 (상점이 위도, 경도)
 	public ArrayList<PlusDTO> getMapList(HttpServletRequest request,HttpServletResponse response) {
 		ArrayList<PlusDTO> mapList = new ArrayList<PlusDTO>();
-		// 리소스 자동 닫기
 		try {
 			conn = getConnection();
 			
@@ -51,7 +48,7 @@ public class PlusDAO {
 				map.setR_longitude(rs.getString(5));
 				
 				mapList.add(map);
-				
+				System.out.println("map : " + map);
 			}
 			
 			request.setAttribute("mapList", mapList);

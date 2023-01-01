@@ -22,7 +22,9 @@ public class PlusController extends HttpServlet {
 		super.init(config);
 
 		dao = new PlusDAO();
+		System.out.println("init");
 		ctx = getServletContext();
+		System.out.println("ctx");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,13 +49,13 @@ public class PlusController extends HttpServlet {
 		PlusDAO pdao = new PlusDAO();
 		
 		switch (command) {
-		case "/":
 		case "/home":
 			site = "Index.jsp";
 			break;
 		case "/maplist":
 			request.setAttribute("mapList",pdao.getMapList(request, response));
-			site = "home.jsp";
+			site = "Index.jsp";
+			break;
 		case "/detail":
 			site = "Detail.jsp";
 			break;
@@ -62,13 +64,20 @@ public class PlusController extends HttpServlet {
 			String la = request.getParameter("La");
 			site = "Write.jsp";
 			break;
-		case "/writing":
-			site = "";
+			/*
+		case "/insert":
+			site = insert(request);
 			break;
-		case "/list":
-			site = "";
+		case "/edit":
+			site = edit(request);
 			break;
-
+		case "/update": //업데이트 기능
+			site = update(request);
+			break;
+		case "/delete":
+			site = delete(request);
+			break;
+		*/
 		}
 
 		ctx.getRequestDispatcher("/" + site).forward(request, response);
