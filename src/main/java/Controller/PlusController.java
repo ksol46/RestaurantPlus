@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import DAO.PlusDAO;
+import DTO.PlusDTO;
 
 @WebServlet("/")
 public class PlusController extends HttpServlet {
@@ -45,29 +46,19 @@ public class PlusController extends HttpServlet {
 		String command = request.getServletPath();
 
 		String site = null;
-
-		PlusDAO pdao = new PlusDAO();
 		
 		switch (command) {
-		case "/home":
-			site = "Index.jsp";
-			break;
-		case "/maplist":
-			request.setAttribute("mapList",pdao.getMapList(request, response));
-			site = "Index.jsp";
-			break;
-		case "/detail":
-			site = "Detail.jsp";
+		case "/contentsInfo":
+			site = getView(request);
 			break;
 		case "/write":
-			String ma = request.getParameter("Ma");
-			String la = request.getParameter("La");
 			site = "Write.jsp";
 			break;
-			/*
 		case "/insert":
 			site = insert(request);
 			break;
+			/*
+		
 		case "/edit":
 			site = edit(request);
 			break;
@@ -78,9 +69,40 @@ public class PlusController extends HttpServlet {
 			site = delete(request);
 			break;
 		*/
+		case "/home":
+		case "/":
+		request.setAttribute("mapList",dao.getMapList(request, response));
+		site = "Index.jsp";
+		break;
 		}
 
 		ctx.getRequestDispatcher("/" + site).forward(request, response);
+	}
+	
+	
+	public String getView(HttpServletRequest request) {
+		int c_id = Integer.parseInt(request.getParameter("c_id"));
+		PlusDTO pd = dao.getView(c_id);
+		request.setAttribute("pd", pd);
+		return "View.jsp";
+	}
+	
+	public String insert(HttpServletRequest request) {
+		int cid =  dao.nextInsertC_id(request);
+		int rid = dao.nextInsertR_id(request);
+		
+		String r_name = request.getParameter("r_name");
+		String c_date = request.getParameter("c_date");
+		String r_address = request.getParameter("r_address");
+		String r_longitude = request.getParameter("r_longitude");
+		String r_latitude = request.getParameter("r_latitude");
+		int c_grade = Integer.parseInt(request.getParameter("c_grade"));
+		String c_coment = request.getParameter("c_coment");
+		
+		dao.insert_c(cid, rid, c_grade, c_coment);
+		dao.insert_r(rid, r_name, r_address, r_longitude, r_latitude);
+		
+		return "Write.jsp";
 	}
 
 }

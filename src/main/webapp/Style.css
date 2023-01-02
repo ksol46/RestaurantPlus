@@ -98,8 +98,18 @@ td {
 }
 
 .w_btn {
-	padding: 3px;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.view_btn {
+	background: #F7C875;
+	padding-left: 18px;
+	padding-right: 18px;
+	margin: 20px;
+	font-size: 20px;
+	display: inline-flex;
+	align-items: center;
 }
 
 footer {

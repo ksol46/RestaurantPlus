@@ -15,29 +15,30 @@ request.setCharacterEncoding("utf-8");
 <body>
 	<%@ include file="Header.jsp"%>
 	<section>
-		<div class="title">맛집 더하기</div>
+		<div class="title">맛집 더하기.</div>
 		<div class="write_main">
-		<form name="frm" action="add">
+			<form name="frm" method="post" action="insert">
 				<table>
+					<tr>
+						<th>상점명</th>
+						<td><input type="text" name="r_name" maxlength="50" placeholder="상점명 입력"></td>
+					</tr>
 					<tr>
 						<th>작성날짜</th>
 						<td><input type="date" name="c_date"></td>
 					</tr>
-					<tr>
-						<th>글제목(상점명으로 불러올 것)</th>
-						<td><input type="text" name="r_name"></td>
-					</tr>
+
 					<tr>
 						<th>상점주소</th>
-						<td><input type="text" name="r_address"></td>
+						<td><input type="text" name="r_address" maxlength="100" placeholder="가게주소 입력"></td>
 					</tr>
 					<tr>
 						<th>경도</th>
-						<td><input type="text" name="r_longitude"></td>
+						<td><input type="text" name="r_longitude" maxlength="15" placeholder="위도 입력"></td>
 					</tr>
 					<tr>
 						<th>위도</th>
-						<td><input type="text" name="r_latitude"></td>
+						<td><input type="text" name="r_latitude" maxlength="15" placeholder="경도 입력"></td>
 					</tr>
 					<tr>
 						<th>평점</th>
@@ -54,14 +55,15 @@ request.setCharacterEncoding("utf-8");
 					</tr>
 					<tr>
 						<td colspan="2" class="w_btn">
-							<button type="submit" onclick="fn_submit(); return false;">작성</button>
-							<button type="reset" onclick="fn_reset()"">다시 작성</button>
+							<button  class="view_btn" type="submit" onclick="chkForm(); return false;">작성</button>
+							<button  class="view_btn" href="home">홈으로</button>
 						</td>
 					</tr>
 				</table>
-			</div>
+		</div>
 		</form>
 	</section>
 	<%@ include file="Footer.jsp"%>
+	<script type="text/javascript" src="Script.js"></script>
 </body>
 </html>
