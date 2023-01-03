@@ -31,11 +31,11 @@
 					<td>${pd.r_address}</td>
 				</tr>
 				<tr>
-					<th>경도</th>
+					<th>위도</th>
 					<td>${pd.r_latitude}</td>
 				</tr>
 				<tr>
-					<th>위도</th>
+					<th>경도</th>
 					<td>${pd.r_longitude}</td>
 				</tr>
 				<tr>
@@ -47,10 +47,8 @@
 					<td>${pd.c_text}</td>
 				</tr>
 				<tr>
-					<td colspan="2" class="w_btn">
-						<a href="home" class="view_btn">목록</a>
-						<a href="edit" class="view_btn">수정</a>
-					</td>
+					<td colspan="2" class="w_btn"><a href="home" class="view_btn">목록</a>
+						<a href="edit?c_id=${pd.c_id}" class="view_btn">수정</a></td>
 				</tr>
 			</table>
 		</div>

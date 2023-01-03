@@ -57,18 +57,15 @@ public class PlusController extends HttpServlet {
 		case "/insert":
 			site = insert(request);
 			break;
-			/*
-		
 		case "/edit":
-			site = edit(request);
+			site = getEdit(request);
 			break;
 		case "/update": //업데이트 기능
-			site = update(request);
+			site = getUpdate(request);
 			break;
 		case "/delete":
-			site = delete(request);
+			site = getDelete(request);
 			break;
-		*/
 		case "/home":
 		case "/":
 		request.setAttribute("mapList",dao.getMapList(request, response));
@@ -81,6 +78,7 @@ public class PlusController extends HttpServlet {
 	
 	
 	public String getView(HttpServletRequest request) {
+		System.out.println("Con view");
 		int c_id = Integer.parseInt(request.getParameter("c_id"));
 		PlusDTO pd = dao.getView(c_id);
 		request.setAttribute("pd", pd);
@@ -88,6 +86,7 @@ public class PlusController extends HttpServlet {
 	}
 	
 	public String insert(HttpServletRequest request) {
+		System.out.println("Con insert");
 		int cid =  dao.nextInsertC_id(request);
 		int rid = dao.nextInsertR_id(request);
 		
@@ -102,7 +101,42 @@ public class PlusController extends HttpServlet {
 		dao.insert_c(cid, rid, c_grade, c_coment);
 		dao.insert_r(rid, r_name, r_address, r_longitude, r_latitude);
 		
-		return "Write.jsp";
+		return "/home";
+	}
+	
+	public String getEdit(HttpServletRequest request) {
+		System.out.println("Con getEdit");
+		int c_id = Integer.parseInt(request.getParameter("c_id"));
+		PlusDTO pd = dao.getEdit(c_id);
+		request.setAttribute("pd", pd);
+		return "Edit.jsp";
+	}
+	
+	public String getUpdate (HttpServletRequest request) {
+		System.out.println("Con getUpdate");
+		int rid = Integer.parseInt(request.getParameter("r_id"));
+		
+		String r_name = request.getParameter("r_name");
+		String c_date = request.getParameter("c_date");
+		String r_address = request.getParameter("r_address");
+		String r_longitude = request.getParameter("r_longitude");
+		String r_latitude = request.getParameter("r_latitude");
+		int c_grade = Integer.parseInt(request.getParameter("c_grade"));
+		String c_coment = request.getParameter("c_coment");
+		
+		dao.update_c(rid, c_grade, c_coment);
+		dao.update_r(rid, r_name, r_address, r_longitude, r_latitude);
+		
+		return "/home";
+	}
+	
+	public String getDelete (HttpServletRequest request) {
+		System.out.println("Con getDelete");
+		int r_id = Integer.parseInt(request.getParameter("r_id"));
+		
+		dao.delete_c(r_id);
+		dao.delete_r(r_id);
+		return "/home";
 	}
 
 }

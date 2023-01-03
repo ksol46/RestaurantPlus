@@ -21,7 +21,8 @@ request.setCharacterEncoding("utf-8");
 				<table>
 					<tr>
 						<th>상점명</th>
-						<td><input type="text" name="r_name" maxlength="50" placeholder="상점명 입력"></td>
+						<td><input type="text" name="r_name" maxlength="50"
+							placeholder="상점명 입력"></td>
 					</tr>
 					<tr>
 						<th>작성날짜</th>
@@ -30,15 +31,18 @@ request.setCharacterEncoding("utf-8");
 
 					<tr>
 						<th>상점주소</th>
-						<td><input type="text" name="r_address" maxlength="100" placeholder="가게주소 입력"></td>
-					</tr>
-					<tr>
-						<th>경도</th>
-						<td><input type="text" name="r_longitude" maxlength="15" placeholder="위도 입력"></td>
+						<td><input type="text" name="r_address" maxlength="100"
+							placeholder="가게주소 입력"></td>
 					</tr>
 					<tr>
 						<th>위도</th>
-						<td><input type="text" name="r_latitude" maxlength="15" placeholder="경도 입력"></td>
+						<td><input type="text" name="r_longitude" maxlength="15"
+							placeholder="위도 입력"></td>
+					</tr>
+					<tr>
+						<th>경도</th>
+						<td><input type="text" name="r_latitude" maxlength="15"
+							placeholder="경도 입력"></td>
 					</tr>
 					<tr>
 						<th>평점</th>
@@ -51,17 +55,18 @@ request.setCharacterEncoding("utf-8");
 					</tr>
 					<tr>
 						<th>코멘트</th>
-						<td><input type="text" name="c_coment"></td>
+						<td><input type="text" name="c_coment" placeholer="코멘트를 입력해주세요."></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="w_btn">
-							<button  class="view_btn" type="submit" onclick="chkForm(); return false;">작성</button>
-							<button  class="view_btn" href="home">홈으로</button>
+							<button class="view_btn" type="submit"
+								onclick="chkForm(); return false;">작성</button>
+							<button class="view_btn" href="home">홈으로</button>
 						</td>
 					</tr>
 				</table>
+			</form>
 		</div>
-		</form>
 	</section>
 	<%@ include file="Footer.jsp"%>
 	<script type="text/javascript" src="Script.js"></script>
