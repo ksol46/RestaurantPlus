@@ -23,9 +23,7 @@ public class PlusController extends HttpServlet {
 		super.init(config);
 
 		dao = new PlusDAO();
-		System.out.println("init");
 		ctx = getServletContext();
-		System.out.println("ctx");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -44,9 +42,10 @@ public class PlusController extends HttpServlet {
 			throws ServletException, IOException {
 		String context = request.getContextPath(); // 톰캣의 Context path를 가져온다(server.xml에서 확인)
 		String command = request.getServletPath();
-
 		String site = null;
-		
+
+		PlusDAO pdao = new PlusDAO();
+
 		switch (command) {
 		case "/contentsInfo":
 			site = getView(request);
@@ -60,7 +59,7 @@ public class PlusController extends HttpServlet {
 		case "/edit":
 			site = getEdit(request);
 			break;
-		case "/update": //업데이트 기능
+		case "/update": // 업데이트 기능
 			site = getUpdate(request);
 			break;
 		case "/delete":
@@ -68,54 +67,58 @@ public class PlusController extends HttpServlet {
 			break;
 		case "/home":
 		case "/":
-		request.setAttribute("mapList",dao.getMapList(request, response));
-		site = "Index.jsp";
-		break;
+			request.setAttribute("mapList", dao.getMapList(request, response));
+			site = "Index.jsp";
+			break;
 		}
 
-		ctx.getRequestDispatcher("/" + site).forward(request, response);
+		if(site.startsWith("redirect:/")) { //redirect/ 문자열 이후 경로만 가지고 옴
+			String rview = site.substring("redirect:/".length());
+							//substring : 문자열을 자름. length : 길이만큼 잘라준다.
+			System.out.println(rview);
+			response.sendRedirect(rview);
+		} else { //forward
+			ctx.getRequestDispatcher("/" + site).forward(request, response);
+		}
+		
 	}
 	
-	
 	public String getView(HttpServletRequest request) {
-		System.out.println("Con view");
 		int c_id = Integer.parseInt(request.getParameter("c_id"));
 		PlusDTO pd = dao.getView(c_id);
 		request.setAttribute("pd", pd);
 		return "View.jsp";
 	}
-	
+
 	public String insert(HttpServletRequest request) {
 		System.out.println("Con insert");
-		int cid =  dao.nextInsertC_id(request);
+		int cid = dao.nextInsertC_id(request);
 		int rid = dao.nextInsertR_id(request);
-		
+
 		String r_name = request.getParameter("r_name");
 		String c_date = request.getParameter("c_date");
 		String r_address = request.getParameter("r_address");
-		String r_longitude = request.getParameter("r_longitude");
 		String r_latitude = request.getParameter("r_latitude");
+		String r_longitude = request.getParameter("r_longitude");
 		int c_grade = Integer.parseInt(request.getParameter("c_grade"));
 		String c_coment = request.getParameter("c_coment");
-		
+
 		dao.insert_c(cid, rid, c_grade, c_coment);
-		dao.insert_r(rid, r_name, r_address, r_longitude, r_latitude);
-		
-		return "/home";
+		dao.insert_r(rid, r_name, r_address, r_latitude, r_longitude );
+
+		return "redirect:/home";
 	}
-	
+
 	public String getEdit(HttpServletRequest request) {
-		System.out.println("Con getEdit");
 		int c_id = Integer.parseInt(request.getParameter("c_id"));
 		PlusDTO pd = dao.getEdit(c_id);
 		request.setAttribute("pd", pd);
 		return "Edit.jsp";
 	}
-	
-	public String getUpdate (HttpServletRequest request) {
-		System.out.println("Con getUpdate");
+
+	public String getUpdate(HttpServletRequest request) {
 		int rid = Integer.parseInt(request.getParameter("r_id"));
-		
+
 		String r_name = request.getParameter("r_name");
 		String c_date = request.getParameter("c_date");
 		String r_address = request.getParameter("r_address");
@@ -123,17 +126,16 @@ public class PlusController extends HttpServlet {
 		String r_latitude = request.getParameter("r_latitude");
 		int c_grade = Integer.parseInt(request.getParameter("c_grade"));
 		String c_coment = request.getParameter("c_coment");
-		
+
 		dao.update_c(rid, c_grade, c_coment);
-		dao.update_r(rid, r_name, r_address, r_longitude, r_latitude);
-		
+		dao.update_r(rid, r_name, r_address, r_latitude, r_longitude);
+
 		return "/home";
 	}
-	
-	public String getDelete (HttpServletRequest request) {
-		System.out.println("Con getDelete");
+
+	public String getDelete(HttpServletRequest request) {
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
-		
+
 		dao.delete_c(r_id);
 		dao.delete_r(r_id);
 		return "/home";

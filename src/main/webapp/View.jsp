@@ -20,35 +20,39 @@
 			<table>
 				<tr>
 					<th>상점명</th>
-					<td>${pd.r_name}</td>
+					<td><span>${pd.r_name}</span></td>
 				</tr>
 				<tr>
 					<th>작성날짜</th>
-					<td>${pd.c_date}</td>
+					<td><span>${pd.c_date}</span></td>
 				</tr>
 				<tr>
 					<th>상점주소</th>
-					<td>${pd.r_address}</td>
+					<td><span>${pd.r_address}</span></td>
 				</tr>
 				<tr>
 					<th>위도</th>
-					<td>${pd.r_latitude}</td>
+					<td><span>${pd.r_latitude}</span></td>
 				</tr>
 				<tr>
 					<th>경도</th>
-					<td>${pd.r_longitude}</td>
+					<td><span>${pd.r_longitude}</span></td>
 				</tr>
 				<tr>
 					<th>평점</th>
-					<td>${pd.c_grade}</td>
+					<td><span>${pd.c_grade}</span></td>
 				</tr>
 				<tr>
 					<th>코멘트</th>
-					<td>${pd.c_text}</td>
+					<td><span>${pd.c_text}</span></td>
 				</tr>
 				<tr>
-					<td colspan="2" class="w_btn"><a href="home" class="view_btn">목록</a>
-						<a href="edit?c_id=${pd.c_id}" class="view_btn">수정</a></td>
+					<td class="sub_btn" colspan="2">
+						<button class="view_btn">
+							<a  class="btn_a" href="edit?c_id=${pd.c_id}">수정하기</a>
+						</button>
+						<button href="home" class="view_btn">목록</button>
+					</td>
 				</tr>
 			</table>
 		</div>

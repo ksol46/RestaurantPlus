@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="map_wrap">
-<div id="map" style="width:1500px;height:700px;text-align:center;"></div>
+<div id="map" style="width:1500px;height:700px;display:flex;justify-content:center;align-items:center;"></div>
 </div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07363c0dc0bf7d6b8e3a7ced482a5de9"></script>
 <script>

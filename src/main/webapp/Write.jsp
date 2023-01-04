@@ -21,44 +21,45 @@ request.setCharacterEncoding("utf-8");
 				<table>
 					<tr>
 						<th>상점명</th>
-						<td><input type="text" name="r_name" maxlength="50"
+						<td><input class="write_input" type="text" name="r_name" maxlength="50"
 							placeholder="상점명 입력"></td>
 					</tr>
 					<tr>
 						<th>작성날짜</th>
-						<td><input type="date" name="c_date"></td>
+						<td><input class="write_input" type="date" name="c_date"></td>
 					</tr>
 
 					<tr>
 						<th>상점주소</th>
-						<td><input type="text" name="r_address" maxlength="100"
+						<td><input class="write_input" type="text" name="r_address" maxlength="100"
 							placeholder="가게주소 입력"></td>
 					</tr>
 					<tr>
 						<th>위도</th>
-						<td><input type="text" name="r_longitude" maxlength="15"
+						<td><input class="write_input" type="text" name="r_latitude" maxlength="15"
 							placeholder="위도 입력"></td>
 					</tr>
 					<tr>
 						<th>경도</th>
-						<td><input type="text" name="r_latitude" maxlength="15"
+						<td><input class="write_input" type="text" name="r_longitude" maxlength="15"
 							placeholder="경도 입력"></td>
 					</tr>
 					<tr>
 						<th>평점</th>
-						<td>1<input type="radio" name="c_grade" value="1"> 2<input
-							type="radio" name="c_grade" value="2"> 3<input
-							type="radio" name="c_grade" value="3"> 4<input
-							type="radio" name="c_grade" value="4"> 5<input
-							type="radio" name="c_grade" value="5">
+						<td class="select_font">
+						 <span>1<input class="select_input" type="radio" name="c_grade" value="1"></span>
+						 <span>2<input class="select_input" type="radio" name="c_grade" value="2"></span>
+						 <span>3<input class="select_input" type="radio" name="c_grade" value="3"></span>
+						 <span>4<input class="select_input" type="radio" name="c_grade" value="4"></span>
+						 <span>5<input class="select_input" type="radio" name="c_grade" value="5"></span>
 						</td>
 					</tr>
 					<tr>
 						<th>코멘트</th>
-						<td><input type="text" name="c_coment" placeholer="코멘트를 입력해주세요."></td>
+						<td><input class="coment_input" type="text" name="c_coment" placeholer="코멘트를 입력해주세요."></td>
 					</tr>
 					<tr>
-						<td colspan="2" class="w_btn">
+						<td class="sub_btn" colspan="2">
 							<button class="view_btn" type="submit"
 								onclick="chkForm(); return false;">작성</button>
 							<button class="view_btn" href="home">홈으로</button>

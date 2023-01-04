@@ -9,8 +9,8 @@
 <body>
 	<header>
 		<div class="logo_wrap">
-			<a class="logo" href="home"><img alt="로고"
-				src="/RestrauntPlus/Image/logo.png"></a>
+			<a href="home"><img class="logo" alt="로고"
+				src="/RestaurantPlus/Image/logo.png"></a>
 		</div>
 	</header>
 	<nav>
